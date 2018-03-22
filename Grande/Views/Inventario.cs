@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grande
+namespace Grande.Views
 {
-    public partial class Form1 : Form
+    public partial class Inventario : Form
     {
-        public Form1()
+        public Inventario()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
