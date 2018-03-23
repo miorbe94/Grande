@@ -25,11 +25,19 @@ namespace Grande.Views
 
         private void Inventario_Load(object sender, EventArgs e)
         {
-            DataTable dt = DAOProductos.getAll();
+            DataTable dt = DAOProductos.getAllNoDescription();
             if (dt != null)
                 dgProductos.DataSource = dt;
             else
                 MessageBox.Show("Error al obtener el inventario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void dgProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = dgProductos.CurrentRow.Index;
+            int clave = int.Parse(dgProductos[0, index].Value.ToString());
+            txtDescripcion.Text = DAOProductos.getDescripcion(clave);
+
         }
     }
 }

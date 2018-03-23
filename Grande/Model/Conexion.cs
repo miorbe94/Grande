@@ -66,5 +66,24 @@ namespace Grande.Model
                 con.Close();
             }
         }
+
+        public string Scalar(MySqlCommand cm)
+        {
+            try
+            {
+                cm.Connection = con;
+                con.Open();
+                return cm.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

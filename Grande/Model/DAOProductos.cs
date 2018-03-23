@@ -27,5 +27,19 @@ namespace Grande.Model
             MySqlCommand cm = new MySqlCommand("SELECT * FROM productos;");
             return con.dataTable(cm);
         }
+
+        public static DataTable getAllNoDescription()
+        {
+            MySqlCommand cm = new MySqlCommand("SELECT clave, nombre, cantidad FROM productos;");
+            return con.dataTable(cm);
+        }
+
+        public static string getDescripcion(int clave)
+        {
+            MySqlCommand cm = new MySqlCommand("SELECT descripcion FROM productos where clave = @clave;");
+            cm.Parameters.AddWithValue("clave", clave);
+            return con.Scalar(cm);
+        }
+
     }
 }
