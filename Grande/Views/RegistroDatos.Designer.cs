@@ -125,18 +125,22 @@
             // 
             this.btnCobrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCobrar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar.ForeColor = System.Drawing.Color.White;
             this.btnCobrar.Location = new System.Drawing.Point(17, 366);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(569, 42);
             this.btnCobrar.TabIndex = 9;
             this.btnCobrar.Text = "Agregar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrar.UseVisualStyleBackColor = false;
             // 
             // RegistroDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(598, 420);
             this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.textBox4);

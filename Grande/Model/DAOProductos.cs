@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+
+namespace Grande.Model
+{
+    class DAOProductos
+    {
+        private static Conexion con = Conexion.getInstance();
+
+        public static void insertar()
+        {
+            
+        }
+
+        public static void actualizar()
+        {
+
+        }
+
+        public static DataTable getAll()
+        {
+            MySqlCommand cm = new MySqlCommand("SELECT * FROM productos;");
+            return con.dataTable(cm);
+        }
+    }
+}

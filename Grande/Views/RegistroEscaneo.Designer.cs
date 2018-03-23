@@ -36,13 +36,16 @@
             // btnCobrar
             // 
             this.btnCobrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCobrar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar.ForeColor = System.Drawing.Color.White;
             this.btnCobrar.Location = new System.Drawing.Point(389, 31);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(189, 42);
             this.btnCobrar.TabIndex = 4;
             this.btnCobrar.Text = "Agregar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrar.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -68,6 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(590, 101);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);

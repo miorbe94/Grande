@@ -28,53 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgProductos = new System.Windows.Forms.DataGridView();
             this.btnCobrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgProductos
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgProductos.AllowUserToAddRows = false;
+            this.dgProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(652, 368);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgProductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProductos.Location = new System.Drawing.Point(12, 12);
+            this.dgProductos.Name = "dgProductos";
+            this.dgProductos.RowHeadersVisible = false;
+            this.dgProductos.RowTemplate.Height = 24;
+            this.dgProductos.Size = new System.Drawing.Size(652, 368);
+            this.dgProductos.TabIndex = 0;
+            this.dgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnCobrar
             // 
             this.btnCobrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCobrar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar.ForeColor = System.Drawing.Color.White;
             this.btnCobrar.Location = new System.Drawing.Point(12, 386);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(652, 42);
             this.btnCobrar.TabIndex = 4;
             this.btnCobrar.Text = "Agregar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrar.UseVisualStyleBackColor = false;
             // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(676, 440);
             this.Controls.Add(this.btnCobrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgProductos);
             this.Name = "Inventario";
             this.Text = "Inventario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Inventario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgProductos;
         private System.Windows.Forms.Button btnCobrar;
     }
 }
