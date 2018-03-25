@@ -18,11 +18,6 @@ namespace Grande.Views
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         public void cargarTabla(string texto)
         {
             DataTable dt = DAOProductos.getAllNoDescription(texto);
@@ -61,17 +56,6 @@ namespace Grande.Views
                 dgProductos.Focus();
             }
                 
-        }
-
-        private void dgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-
-        }
-
-        private void dgProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grande.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Grande.Views
 {
-    public partial class Historial : Form
+    public partial class Ventas : Form
     {
-        public Historial()
+        public Ventas()
         {
             InitializeComponent();
         }
@@ -20,6 +21,24 @@ namespace Grande.Views
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void cargarVentas()
+        {
+            DataTable dt = DAOVentas.getAll();
+            if(dt != null)
+            {
+                dgVentas.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar las ventas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Historial_Load(object sender, EventArgs e)
+        {
+            cargarVentas();
         }
     }
 }

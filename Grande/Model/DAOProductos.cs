@@ -31,7 +31,7 @@ namespace Grande.Model
 
         public static DataTable getAllNoDescription(string texto)
         {
-            MySqlCommand cm = new MySqlCommand("SELECT clave, nombre, cantidad, cantidadminima, precio FROM productos where nombre like @nom;");
+            MySqlCommand cm = new MySqlCommand("SELECT clave as Clave, nombre as Nombre, cantidad as Cantidad, cantidadminima as `Cantidad minima`, precio as Precio FROM productos where nombre like @nom;");
             cm.Parameters.AddWithValue("nom", "%"+texto+"%");
             return con.dataTable(cm);
         }
