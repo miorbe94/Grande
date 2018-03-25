@@ -97,9 +97,8 @@ namespace Grande
 
         public void limpiado()
         {
-            //limpiar dgv
-            //limpiar arraylist
-            //limpiar total
+            dgCarrito.Rows.Clear();
+            lblTotal.Text = "$0";
         }
 
         public void total()
@@ -124,7 +123,12 @@ namespace Grande
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show("¿Seguro deseas quitar este elemento de la lista?", "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                int index = dgCarrito.CurrentRow.Index;
+                dgCarrito.Rows.RemoveAt(index);
+            }            
             txtCodigo.Focus();
         }
 

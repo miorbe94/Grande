@@ -41,15 +41,15 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.dgCarrito = new System.Windows.Forms.DataGridView();
-            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -173,14 +173,13 @@
             this.dgCarrito.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgCarrito.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgCarrito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgCarrito.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgCarrito.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgCarrito.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -215,30 +214,6 @@
             this.dgCarrito.Size = new System.Drawing.Size(603, 390);
             this.dgCarrito.TabIndex = 2;
             this.dgCarrito.Paint += new System.Windows.Forms.PaintEventHandler(this.dgCarrito_Paint);
-            // 
-            // clave
-            // 
-            this.clave.HeaderText = "Clave";
-            this.clave.Name = "clave";
-            this.clave.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -293,6 +268,33 @@
             this.registroToolStripMenuItem.Size = new System.Drawing.Size(81, 32);
             this.registroToolStripMenuItem.Text = "Ventas";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
+            // 
+            // clave
+            // 
+            this.clave.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.clave.HeaderText = "Clave";
+            this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
+            this.clave.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clave.Width = 151;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
             // 
             // Form1
             // 
