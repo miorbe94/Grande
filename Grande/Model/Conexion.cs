@@ -85,5 +85,24 @@ namespace Grande.Model
             }
         }
 
+        public bool hayRenglones(MySqlCommand cm)
+        {
+            try
+            {
+                cm.Connection = con;
+                con.Open();
+                MySqlDataReader dr = cm.ExecuteReader();
+                return dr.HasRows;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

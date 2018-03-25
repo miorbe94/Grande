@@ -20,24 +20,84 @@ namespace Grande.Views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
-        private void Inventario_Load(object sender, EventArgs e)
+        public void cargarTabla(string texto)
         {
-            DataTable dt = DAOProductos.getAllNoDescription();
+            DataTable dt = DAOProductos.getAllNoDescription(texto);
             if (dt != null)
                 dgProductos.DataSource = dt;
             else
                 MessageBox.Show("Error al obtener el inventario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void Inventario_Load(object sender, EventArgs e)
+        {
+            cargarTabla("");
+        }
+
         private void dgProductos_SelectionChanged(object sender, EventArgs e)
         {
-            int index = dgProductos.CurrentRow.Index;
-            int clave = int.Parse(dgProductos[0, index].Value.ToString());
-            txtDescripcion.Text = DAOProductos.getDescripcion(clave);
+            try
+            {
+                int index = dgProductos.CurrentRow.Index;
+                string clave = dgProductos[0, index].Value.ToString();
+                txtDescripcion.Text = DAOProductos.getDescripcion(clave);
+            }
+            catch
+            {
+            }
 
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            string a = new RegistroEscaneo().registrar();
+            if (a != null)
+            {
+                new RegistroDatos(a, RegistroDatos.AGREGAR).ShowDialog();
+                cargarTabla("");
+                dgProductos.Focus();
+            }
+                
+        }
+
+        private void dgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+
+        }
+
+        private void dgProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int index = dgProductos.CurrentRow.Index;
+            DialogResult dr = MessageBox.Show("¿Seguro deseas eliminar este producto?", "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                bool a = DAOProductos.eliminarProducto(dgProductos[0, index].Value.ToString());
+                if (a)
+                    cargarTabla("");
+                else
+                    MessageBox.Show("Error al borrar el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int index = dgProductos.CurrentRow.Index;
+            new RegistroDatos(dgProductos[0, index].Value.ToString(), RegistroDatos.EDITAR).ShowDialog();
+            cargarTabla("");
+        }
+
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+            cargarTabla(txtBuscador.Text);
         }
     }
 }

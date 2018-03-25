@@ -33,5 +33,10 @@ namespace Grande
         {
             new Historial().ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

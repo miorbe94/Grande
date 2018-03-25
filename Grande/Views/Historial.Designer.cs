@@ -70,6 +70,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(999, 464);
             this.Name = "Historial";
             this.Text = "Historial";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
