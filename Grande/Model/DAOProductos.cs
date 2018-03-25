@@ -94,7 +94,7 @@ namespace Grande.Model
                 p.Descripcion = dt.Rows[0][2].ToString();
                 p.Cantidad = int.Parse(dt.Rows[0][3].ToString());
                 p.CantidadMinima = int.Parse(dt.Rows[0][4].ToString());
-                p.Precio = decimal.Parse(dt.Rows[0][4].ToString());
+                p.Precio = decimal.Parse(dt.Rows[0][5].ToString());
                 return p;
             }
             else

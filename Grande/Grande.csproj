@@ -51,11 +51,11 @@
     <Compile Include="Model\DAOVentas.cs" />
     <Compile Include="POJOS\Producto.cs" />
     <Compile Include="POJOS\Venta.cs" />
-    <Compile Include="Views\Historial.cs">
+    <Compile Include="Views\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Historial.Designer.cs">
-      <DependentUpon>Historial.cs</DependentUpon>
+    <Compile Include="Views\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Inventario.cs">
       <SubType>Form</SubType>
@@ -83,8 +83,8 @@
     <Compile Include="Views\RegistroEscaneo.Designer.cs">
       <DependentUpon>RegistroEscaneo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Historial.resx">
-      <DependentUpon>Historial.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -126,6 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

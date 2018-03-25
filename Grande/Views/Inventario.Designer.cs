@@ -56,6 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgProductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -85,6 +86,7 @@
             this.dgProductos.Size = new System.Drawing.Size(990, 396);
             this.dgProductos.TabIndex = 0;
             this.dgProductos.SelectionChanged += new System.EventHandler(this.dgProductos_SelectionChanged);
+            this.dgProductos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgProductos_MouseClick);
             // 
             // btnAgregar
             // 

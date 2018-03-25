@@ -83,5 +83,10 @@ namespace Grande.Views
         {
             cargarTabla(txtBuscador.Text);
         }
+
+        private void dgProductos_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
     }
 }

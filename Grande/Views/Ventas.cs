@@ -40,5 +40,29 @@ namespace Grande.Views
         {
             cargarVentas();
         }
+
+        private void dgVentas_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = dgVentas.CurrentRow.Index;
+            DataTable dt = DAOVentas.getProductosByVenta(int.Parse(dgVentas[0, index].Value.ToString()));
+            if (dt != null)
+            {
+                dgProductos.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los productos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgProductos_MouseClick(object sender, MouseEventArgs e)
+        {
+            dgVentas.Focus();
+        }
+
+        private void dgProductos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            dgVentas.Focus();
+        }
     }
 }
