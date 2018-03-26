@@ -167,7 +167,13 @@ namespace Grande
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 agregar();
+                e.Handled = true;
             }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
