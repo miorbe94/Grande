@@ -16,6 +16,9 @@ namespace Grande.Views
     {
         DataGridView dg;
         int row;
+        Producto p;
+        string clave;
+
 
         public EditarCantidad()
         {
@@ -27,6 +30,9 @@ namespace Grande.Views
             InitializeComponent();
             this.dg = dg;
             this.row = row;
+            clave = dg[0, row].Value.ToString();
+            p = DAOProductos.getOne(clave);
+            lblDisponibles.Text = p.Cantidad + " disponibles";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,8 +52,7 @@ namespace Grande.Views
                 int valor = int.Parse(textBox1.Text);
                 if (valor > 0)
                 {
-                    string clave = dg[0,row].Value.ToString();
-                    Producto p = DAOProductos.getOne(clave);
+                    
                     int stock = p.Cantidad;
                     if(stock >= valor)
                     {
