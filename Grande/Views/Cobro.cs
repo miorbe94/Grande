@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grande.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,85 @@ namespace Grande.Views
 {
     public partial class Cobro : Form
     {
+        DataGridView dg;
+        decimal total;
+
         public Cobro()
         {
             InitializeComponent();
+        }
+
+        public Cobro(DataGridView dg)
+        {
+            InitializeComponent();
+            this.dg = dg;
+            calcularTotal();
+        }
+
+        public void calcularTotal()
+        {
+            decimal total = 0;
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                total += decimal.Parse(dg[2, i].Value.ToString()) * decimal.Parse(dg[3, i].Value.ToString().Substring(1));
+            }
+            this.total = total;
+            lblTotal.Text = "Total: $" + total;
+        }
+
+        private void Cobro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            bool flag = true; //se debe dar cambio
+            bool proceder = true; //se debe ejecutar la venta
+
+            decimal cambio = 0;
+            if (textBox1.Text == "")
+            {
+                flag = false;
+            }else
+            {
+                try
+                {
+                    decimal recibido = decimal.Parse(textBox1.Text);
+                    cambio = recibido - total;
+                    flag = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Error al calcular el cambio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    proceder = false;
+                }
+                
+            }
+            if (proceder)
+            {
+                bool a = DAOVenta.venta(dg);
+                if (a)
+                {
+                    if (!flag)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Exito\nEl cambio es: $ " + cambio, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Close();
         }
     }
 }

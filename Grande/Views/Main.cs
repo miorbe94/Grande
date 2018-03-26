@@ -146,7 +146,8 @@ namespace Grande
             }
             else
             {
-                new Cobro().ShowDialog();
+                new Cobro(dgCarrito).ShowDialog();
+                limpiado();
             }
             txtCodigo.Focus();
         }

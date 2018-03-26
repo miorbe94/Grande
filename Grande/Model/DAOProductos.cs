@@ -13,15 +13,7 @@ namespace Grande.Model
     {
         private static Conexion con = Conexion.getInstance();
 
-        public static void insertar()
-        {
-            
-        }
-
-        public static void actualizar()
-        {
-
-        }
+        
 
         public static DataTable getAll()
         {

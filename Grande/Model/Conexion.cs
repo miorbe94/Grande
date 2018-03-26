@@ -18,6 +18,11 @@ namespace Grande.Model
 
         private Conexion() { }
 
+        public MySqlTransaction transaction()
+        {
+            return con.BeginTransaction();
+        }
+
         public static Conexion getInstance()
         {
             if(cn == null)
@@ -44,6 +49,22 @@ namespace Grande.Model
             {
                 con.Close();
             }
+        }
+
+        public void abrirConexion()
+        {
+            con.Open();
+        }
+
+        public void cerrarConexion()
+        {
+            con.Close();
+        }
+
+        public void executeNonQueryTransaction(MySqlCommand cm)
+        {            
+            cm.Connection = con;
+            cm.ExecuteNonQuery();
         }
 
         public DataTable dataTable(MySqlCommand cm)
@@ -83,6 +104,12 @@ namespace Grande.Model
             {
                 con.Close();
             }
+        }
+
+        public string ScalarTransactiction(MySqlCommand cm)
+        {
+            cm.Connection = con;
+            return cm.ExecuteScalar().ToString();
         }
 
         public bool hayRenglones(MySqlCommand cm)

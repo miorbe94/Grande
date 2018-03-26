@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Model\Conexion.cs" />
     <Compile Include="Model\DAOProductos.cs" />
+    <Compile Include="Model\DAOVenta.cs" />
     <Compile Include="Model\DAOVentas.cs" />
     <Compile Include="POJOS\Producto.cs" />
     <Compile Include="POJOS\Venta.cs" />
