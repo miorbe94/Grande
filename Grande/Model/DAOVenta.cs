@@ -16,6 +16,7 @@ namespace Grande.Model
         {
             MySqlTransaction tr = null;
             MySqlCommand cm = null;
+            MySqlCommand cm2 = null;
             try
             {
                 con.abrirConexion();
@@ -24,13 +25,19 @@ namespace Grande.Model
                 con.executeNonQueryTransaction(cm);
                 cm = new MySqlCommand("select max(folio) from ventas;");
                 string venta = con.ScalarTransactiction(cm);
-                cm = new MySqlCommand("insert into productos_has_ventas values(@producto, @venta, @cantidad);");
                 for (int i = 0; i < dg.Rows.Count; i++)
                 {
+                    cm = new MySqlCommand("insert into productos_has_ventas values(@producto, @venta, @cantidad);");
                     cm.Parameters.Clear();
                     cm.Parameters.AddWithValue("@producto", dg[0, i].Value.ToString());
                     cm.Parameters.AddWithValue("@venta", venta);
                     cm.Parameters.AddWithValue("@cantidad", dg[2, i].Value.ToString());
+                    con.executeNonQueryTransaction(cm);
+
+                    cm.Parameters.Clear();
+                    cm = new MySqlCommand("UPDATE productos SET cantidad=cantidad - @cantidad WHERE clave=@producto;");
+                    cm.Parameters.AddWithValue("@cantidad", dg[2, i].Value.ToString());
+                    cm.Parameters.AddWithValue("@producto", dg[0, i].Value.ToString());
                     con.executeNonQueryTransaction(cm);
                 }
 
