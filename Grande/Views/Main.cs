@@ -117,7 +117,8 @@ namespace Grande
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            int index = dgCarrito.CurrentRow.Index;
+            new EditarCantidad(dgCarrito, index).ShowDialog();
             txtCodigo.Focus();
         }
 

@@ -51,6 +51,12 @@
     <Compile Include="Model\DAOVentas.cs" />
     <Compile Include="POJOS\Producto.cs" />
     <Compile Include="POJOS\Venta.cs" />
+    <Compile Include="Views\EditarCantidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditarCantidad.Designer.cs">
+      <DependentUpon>EditarCantidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Views\RegistroEscaneo.Designer.cs">
       <DependentUpon>RegistroEscaneo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\EditarCantidad.resx">
+      <DependentUpon>EditarCantidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
