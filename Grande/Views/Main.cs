@@ -57,7 +57,7 @@ namespace Grande
             return a;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        public void agregar()
         {
             string clave = txtCodigo.Text;
             Producto p = DAOProductos.getOne(clave);
@@ -67,22 +67,27 @@ namespace Grande
             }
             else
             {
-                if(p.Cantidad > 0)
+                if (p.Cantidad > 0)
                 {
                     if (!existeEnCarrito(p))
                     {
-                        dgCarrito.Rows.Add(new string[] { p.Clave, p.Nombre, "1", "$" + p.Precio  });
+                        dgCarrito.Rows.Add(new string[] { p.Clave, p.Nombre, "1", "$" + p.Precio });
                     }
                 }
                 else
                 {
                     MessageBox.Show("No quedan mas productos en existencia", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                
-                
+
+
             }
             txtCodigo.Focus();
             txtCodigo.Text = "";
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            agregar();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -135,7 +140,14 @@ namespace Grande
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-
+            if(dgCarrito.Rows.Count < 1)
+            {
+                MessageBox.Show("Debes agregar minimo un articulo al carrito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                new Cobro().ShowDialog();
+            }
             txtCodigo.Focus();
         }
 
@@ -147,6 +159,14 @@ namespace Grande
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                agregar();
+            }
         }
     }
 }

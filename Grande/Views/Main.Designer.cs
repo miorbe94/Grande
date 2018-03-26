@@ -107,7 +107,7 @@
             this.button1.Location = new System.Drawing.Point(531, 447);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -121,7 +121,7 @@
             this.btnEditar.Location = new System.Drawing.Point(450, 447);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 75);
-            this.btnEditar.TabIndex = 6;
+            this.btnEditar.TabIndex = 3;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -161,7 +161,7 @@
             this.btnCobrar.Location = new System.Drawing.Point(311, 531);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(295, 68);
-            this.btnCobrar.TabIndex = 3;
+            this.btnCobrar.TabIndex = 6;
             this.btnCobrar.Text = "Cobrar";
             this.btnCobrar.UseVisualStyleBackColor = false;
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
@@ -239,6 +239,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(481, 30);
             this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // menuStrip1
             // 
@@ -271,12 +272,10 @@
             // 
             // clave
             // 
-            this.clave.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.clave.HeaderText = "Clave";
             this.clave.Name = "clave";
             this.clave.ReadOnly = true;
             this.clave.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clave.Width = 151;
             // 
             // nombre
             // 
