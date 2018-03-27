@@ -33,6 +33,17 @@ namespace Grande.Views
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
+            agregar();
+        }
+            
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void agregar()
+        {
             clave = DAOProductos.existeProducto(txtClave.Text) ? null : txtClave.Text;
             if (clave != null)
                 this.Close();
@@ -43,11 +54,14 @@ namespace Grande.Views
                 txtClave.Focus();
             }
         }
-            
 
-        private void txtClave_TextChanged(object sender, EventArgs e)
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                agregar();
+                e.Handled = true;
+            }
         }
     }
 }

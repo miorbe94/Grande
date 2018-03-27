@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroEscaneo));
-            this.btnCobrar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCobrar
+            // btnAgregar
             // 
-            this.btnCobrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCobrar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.ForeColor = System.Drawing.Color.White;
-            this.btnCobrar.Location = new System.Drawing.Point(389, 31);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(189, 42);
-            this.btnCobrar.TabIndex = 5;
-            this.btnCobrar.Text = "Agregar";
-            this.btnCobrar.UseVisualStyleBackColor = false;
-            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(389, 31);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(189, 42);
+            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
             // txtClave
             // 
@@ -59,6 +59,7 @@
             this.txtClave.Size = new System.Drawing.Size(371, 30);
             this.txtClave.TabIndex = 4;
             this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
+            this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
             // 
             // label1
             // 
@@ -78,7 +79,7 @@
             this.ClientSize = new System.Drawing.Size(590, 101);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtClave);
-            this.Controls.Add(this.btnCobrar);
+            this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -96,7 +97,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label1;
     }

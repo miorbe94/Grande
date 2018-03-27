@@ -39,6 +39,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,7 +84,7 @@
             this.dgProductos.RowHeadersVisible = false;
             this.dgProductos.RowTemplate.Height = 24;
             this.dgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProductos.Size = new System.Drawing.Size(990, 396);
+            this.dgProductos.Size = new System.Drawing.Size(990, 373);
             this.dgProductos.TabIndex = 0;
             this.dgProductos.SelectionChanged += new System.EventHandler(this.dgProductos_SelectionChanged);
             this.dgProductos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgProductos_MouseClick);
@@ -96,7 +97,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 623);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 597);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(342, 42);
             this.btnAgregar.TabIndex = 4;
@@ -111,7 +112,7 @@
             this.txtDescripcion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 487);
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 452);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
@@ -123,11 +124,12 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 459);
+            this.label1.Location = new System.Drawing.Point(7, 424);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Descripción";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEliminar
             // 
@@ -136,7 +138,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(684, 623);
+            this.btnEliminar.Location = new System.Drawing.Point(684, 597);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(318, 42);
             this.btnEliminar.TabIndex = 7;
@@ -151,7 +153,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(360, 623);
+            this.btnEditar.Location = new System.Drawing.Point(360, 597);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(318, 42);
             this.btnEditar.TabIndex = 8;
@@ -170,6 +172,21 @@
             this.txtBuscador.TabIndex = 9;
             this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Grande.Properties.Resources.barc;
+            this.button1.Location = new System.Drawing.Point(12, 645);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(990, 77);
+            this.button1.TabIndex = 11;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Grande.Properties.Resources.search;
@@ -185,7 +202,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1014, 677);
+            this.ClientSize = new System.Drawing.Size(1014, 734);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.btnEditar);
@@ -217,5 +235,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
