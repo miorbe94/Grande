@@ -16,7 +16,6 @@ namespace Grande.Model
         {
             MySqlTransaction tr = null;
             MySqlCommand cm = null;
-            MySqlCommand cm2 = null;
             try
             {
                 con.abrirConexion();
