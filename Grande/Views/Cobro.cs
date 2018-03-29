@@ -48,6 +48,7 @@ namespace Grande.Views
         {
             bool flag = true; //se debe dar cambio
             bool proceder = true; //se debe ejecutar la venta
+            bool errorCambio = false; 
 
             decimal cambio = 0;
             if (textBox1.Text == "")
@@ -58,13 +59,18 @@ namespace Grande.Views
                 try
                 {
                     decimal recibido = decimal.Parse(textBox1.Text);
-                    cambio = recibido - total;
-                    flag = true;
+                    cambio = recibido - total;                    
+                    if (cambio < 0)
+                    {
+                        errorCambio = true;
+                        proceder = false;
+                    }
                 }
                 catch
                 {
                     MessageBox.Show("Error al calcular el cambio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     proceder = false;
+                    errorCambio = true;
                 }
                 
             }
@@ -75,11 +81,11 @@ namespace Grande.Views
                 {
                     if (!flag)
                     {
-
+                        new Total().ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Exito\nEl cambio es: $ " + cambio, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        new Total(cambio).ShowDialog();                        
                     }
                 }
                 else
@@ -89,9 +95,19 @@ namespace Grande.Views
             }
             else
             {
-                MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (errorCambio)
+                {
+                    MessageBox.Show("Debe pedir mas dinero", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            this.Close();
+            if (!errorCambio)
+            {
+                this.Close();
+            }
         }
     }
 }

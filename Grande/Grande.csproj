@@ -67,6 +67,12 @@
     <Compile Include="Views\EditarCantidad.Designer.cs">
       <DependentUpon>EditarCantidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Total.Designer.cs">
+      <DependentUpon>Total.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EditarCantidad.resx">
       <DependentUpon>EditarCantidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Total.resx">
+      <DependentUpon>Total.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -161,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
