@@ -182,8 +182,11 @@ namespace Grande
             }
             else
             {
-                new Cobro(dgCarrito).ShowDialog();
-                limpiado();
+                DialogResult dr = new Cobro(dgCarrito).ShowDialog();
+                if(dr == DialogResult.Yes)
+                {
+                    limpiado();
+                }
             }
             checarInventario();
             txtCodigo.Focus();

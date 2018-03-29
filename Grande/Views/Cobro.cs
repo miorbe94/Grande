@@ -66,6 +66,7 @@ namespace Grande.Views
                 {
                     MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                this.DialogResult = DialogResult.Yes;
                 this.Close();
             }
             else
@@ -91,6 +92,7 @@ namespace Grande.Views
                         {
                             MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                        this.DialogResult = DialogResult.Yes;
                         this.Close();
                     }
                 }
