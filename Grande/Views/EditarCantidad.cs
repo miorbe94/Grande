@@ -47,7 +47,6 @@ namespace Grande.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             cambiar();
         }
 
@@ -68,17 +67,20 @@ namespace Grande.Views
                     else
                     {
                         MessageBox.Show("No productos suficientes en existencia", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBox1.Focus();
                     }
 
                 }
                 else
                 {
                     MessageBox.Show("Debes agregar un número mayor a 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBox1.Focus();
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("El valor debe ser un número entero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textBox1.Focus();
             }
         }
 

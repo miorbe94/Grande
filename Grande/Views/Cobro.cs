@@ -65,6 +65,7 @@ namespace Grande.Views
                 else
                 {
                     MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt.Focus();
                 }
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
@@ -79,6 +80,7 @@ namespace Grande.Views
                     if (cambio < 0)
                     {
                         MessageBox.Show("Debes pedir mas dinero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txt.Focus();
                     }
                     else
                     {
@@ -91,6 +93,7 @@ namespace Grande.Views
                         else
                         {
                             MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txt.Focus();
                         }
                         this.DialogResult = DialogResult.Yes;
                         this.Close();
@@ -99,6 +102,7 @@ namespace Grande.Views
                 else
                 {
                     MessageBox.Show("Valor no aceptado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt.Focus();
                 }
             }
         }
