@@ -100,7 +100,16 @@ namespace Grande
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregar();
+            if(txtCodigo.Text == "")
+            {
+                MessageBox.Show("Debes escribir la clave del producto para proceder", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodigo.Focus();
+            }
+            else
+            {
+
+                agregar();
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
