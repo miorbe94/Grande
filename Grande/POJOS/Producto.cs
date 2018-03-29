@@ -20,5 +20,7 @@ namespace Grande.POJOS
 
         public decimal Precio { get; set; }
 
+        public string activo { get; set; }
+
     }
 }

@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkFaltantes = new System.Windows.Forms.CheckBox();
+            this.checkEliminados = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -169,7 +170,7 @@
             this.txtBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscador.Location = new System.Drawing.Point(48, 12);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(834, 30);
+            this.txtBuscador.Size = new System.Drawing.Size(674, 30);
             this.txtBuscador.TabIndex = 9;
             this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
             // 
@@ -201,6 +202,7 @@
             // 
             // checkFaltantes
             // 
+            this.checkFaltantes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkFaltantes.AutoSize = true;
             this.checkFaltantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkFaltantes.Location = new System.Drawing.Point(888, 14);
@@ -211,6 +213,19 @@
             this.checkFaltantes.UseVisualStyleBackColor = true;
             this.checkFaltantes.CheckedChanged += new System.EventHandler(this.checkFaltantes_CheckedChanged);
             // 
+            // checkEliminados
+            // 
+            this.checkEliminados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkEliminados.AutoSize = true;
+            this.checkEliminados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEliminados.Location = new System.Drawing.Point(748, 12);
+            this.checkEliminados.Name = "checkEliminados";
+            this.checkEliminados.Size = new System.Drawing.Size(134, 29);
+            this.checkEliminados.TabIndex = 13;
+            this.checkEliminados.Text = "Eliminados ";
+            this.checkEliminados.UseVisualStyleBackColor = true;
+            this.checkEliminados.CheckedChanged += new System.EventHandler(this.checkEliminados_CheckedChanged);
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,6 +233,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 734);
             this.Controls.Add(this.checkFaltantes);
+            this.Controls.Add(this.checkEliminados);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscador);
@@ -252,5 +268,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkFaltantes;
+        private System.Windows.Forms.CheckBox checkEliminados;
     }
 }

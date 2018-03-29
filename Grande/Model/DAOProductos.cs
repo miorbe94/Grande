@@ -25,10 +25,19 @@ namespace Grande.Model
             return con.dataTable(cm);
         }
 
-        public static DataTable getAllNoDescription(string texto)
+        public static DataTable getAllNoDescription(string texto, bool activos)
         {
-            MySqlCommand cm = new MySqlCommand("SELECT clave as Clave, nombre as Nombre, cantidad as Cantidad, cantidadminima as `Cantidad minima`, precio as Precio FROM productos where nombre like @nom;");
+            MySqlCommand cm = new MySqlCommand("SELECT clave as Clave, nombre as Nombre, cantidad as Cantidad, cantidadminima as `Cantidad minima`, precio as Precio FROM productos where nombre like @nom and activo = @activos;");
             cm.Parameters.AddWithValue("nom", "%"+texto+"%");
+            if (activos)
+            {
+                cm.Parameters.AddWithValue("activos", "si");
+            }
+            else
+            {
+                cm.Parameters.AddWithValue("activos", "no");
+            }
+            
             return con.dataTable(cm);
         }
 
@@ -55,7 +64,7 @@ namespace Grande.Model
 
         public static bool agregarProducto(Producto p)
         {
-            MySqlCommand cm = new MySqlCommand("insert into productos values(@clave, @nombre, @descripcion, @cantidad, @cantidadminima, @precio)");
+            MySqlCommand cm = new MySqlCommand("insert into productos (clave, nombre, descripcion, cantidad, cantidadminima, precio) values(@clave, @nombre, @descripcion, @cantidad, @cantidadminima, @precio)");
             cm.Parameters.AddWithValue("clave", p.Clave);
             cm.Parameters.AddWithValue("nombre", p.Nombre);
             cm.Parameters.AddWithValue("descripcion", p.Descripcion);

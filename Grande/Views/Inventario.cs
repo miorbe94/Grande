@@ -15,6 +15,9 @@ namespace Grande.Views
 {
     public partial class Inventario : Form
     {
+
+        private bool activos = true;
+
         public Inventario()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace Grande.Views
             }
             else
             {
-                dt = DAOProductos.getAllNoDescription(texto);
+                dt = DAOProductos.getAllNoDescription(texto, activos);
             }
             if (dt != null)
                 dgProductos.DataSource = dt;
@@ -106,6 +109,7 @@ namespace Grande.Views
 
         private void checkFaltantes_CheckedChanged(object sender, EventArgs e)
         {
+            checkEliminados.Checked = false;
             txtBuscador.Text = "";
             cargarTabla(txtBuscador.Text);
         }
@@ -126,6 +130,22 @@ namespace Grande.Views
                 img.Save(dialogo.FileName, ImageFormat.Png);
             }
             img.Dispose();
+        }
+
+        private void checkEliminados_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEliminados.Checked)
+            {
+                activos = false;
+                checkFaltantes.Checked = false;
+            }
+            else
+            {
+                activos = true;
+                checkFaltantes.Enabled = true;
+            }
+            txtBuscador.Text = "";
+            cargarTabla(txtBuscador.Text);
         }
     }
 }
