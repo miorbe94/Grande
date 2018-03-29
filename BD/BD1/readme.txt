@@ -1,0 +1,1 @@
+Esta version no tiene la columna de activo en la bd usada para determinar si un producto está eliminado

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Grande.Model;
+using BarcodeLib;
+using System.Drawing.Imaging;
 
 namespace Grande.Views
 {
@@ -106,6 +108,24 @@ namespace Grande.Views
         {
             txtBuscador.Text = "";
             cargarTabla(txtBuscador.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string clave = dgProductos[0, dgProductos.CurrentRow.Index].Value.ToString();
+
+            BarcodeLib.Barcode codigo = new BarcodeLib.Barcode();
+            codigo.IncludeLabel = true;
+            Image img = (Image)codigo.Encode(BarcodeLib.TYPE.CODE128, clave, Color.Black, Color.White, 300, 100);
+            SaveFileDialog dialogo = new SaveFileDialog();
+            dialogo.AddExtension = true;
+            dialogo.Filter = "Image PNG (*.png)|*.png";
+            dialogo.ShowDialog();
+            if (!string.IsNullOrEmpty(dialogo.FileName))
+            {
+                img.Save(dialogo.FileName, ImageFormat.Png);
+            }
+            img.Dispose();
         }
     }
 }
