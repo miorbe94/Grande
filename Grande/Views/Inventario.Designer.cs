@@ -41,6 +41,7 @@
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkFaltantes = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -168,7 +169,7 @@
             this.txtBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscador.Location = new System.Drawing.Point(48, 12);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(954, 30);
+            this.txtBuscador.Size = new System.Drawing.Size(834, 30);
             this.txtBuscador.TabIndex = 9;
             this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
             // 
@@ -197,12 +198,25 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // checkFaltantes
+            // 
+            this.checkFaltantes.AutoSize = true;
+            this.checkFaltantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkFaltantes.Location = new System.Drawing.Point(888, 14);
+            this.checkFaltantes.Name = "checkFaltantes";
+            this.checkFaltantes.Size = new System.Drawing.Size(114, 29);
+            this.checkFaltantes.TabIndex = 12;
+            this.checkFaltantes.Text = "Faltantes";
+            this.checkFaltantes.UseVisualStyleBackColor = true;
+            this.checkFaltantes.CheckedChanged += new System.EventHandler(this.checkFaltantes_CheckedChanged);
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 734);
+            this.Controls.Add(this.checkFaltantes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscador);
@@ -236,5 +250,6 @@
         private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkFaltantes;
     }
 }

@@ -20,7 +20,15 @@ namespace Grande.Views
 
         public void cargarTabla(string texto)
         {
-            DataTable dt = DAOProductos.getAllNoDescription(texto);
+            DataTable dt;
+            if (checkFaltantes.Checked)
+            {
+                dt = DAOProductos.getAllNoDescriptionFaltantes(texto);
+            }
+            else
+            {
+                dt = DAOProductos.getAllNoDescription(texto);
+            }
             if (dt != null)
                 dgProductos.DataSource = dt;
             else
@@ -92,6 +100,12 @@ namespace Grande.Views
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkFaltantes_CheckedChanged(object sender, EventArgs e)
+        {
+            txtBuscador.Text = "";
+            cargarTabla(txtBuscador.Text);
         }
     }
 }
