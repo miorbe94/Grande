@@ -15,7 +15,7 @@ namespace Grande.Model
 
         public static int cantidadProductosBajos()
         {
-            MySqlCommand cm = new MySqlCommand("select count(*) from productos where cantidad <= cantidadminima;");
+            MySqlCommand cm = new MySqlCommand("select count(*) from productos where cantidad <= cantidadminima and activo = 'si';");
             return int.Parse(con.Scalar(cm));
         }
 
@@ -43,7 +43,7 @@ namespace Grande.Model
 
         public static DataTable getAllNoDescriptionFaltantes(string texto)
         {
-            MySqlCommand cm = new MySqlCommand("SELECT clave as Clave, nombre as Nombre, cantidad as Cantidad, cantidadminima as `Cantidad minima`, precio as Precio FROM productos where nombre like @nom and cantidad <= cantidadminima;");
+            MySqlCommand cm = new MySqlCommand("SELECT clave as Clave, nombre as Nombre, cantidad as Cantidad, cantidadminima as `Cantidad minima`, precio as Precio FROM productos where nombre like @nom and cantidad <= cantidadminima and activo = 'si';");
             cm.Parameters.AddWithValue("nom", "%" + texto + "%");
             return con.dataTable(cm);
         }
@@ -76,7 +76,14 @@ namespace Grande.Model
 
         public static bool eliminarProducto(string clave)
         {
-            MySqlCommand cm = new MySqlCommand("UPDATE `grande`.`productos` SET `cantidad`= 0, `cantidadminima` = 0 WHERE `clave`=@clave;");
+            MySqlCommand cm = new MySqlCommand("UPDATE `grande`.`productos` SET `activo`= 'no' WHERE `clave`= @clave; ");
+            cm.Parameters.AddWithValue("clave", clave);
+            return con.executeNonQuery(cm);
+        }
+
+        public static bool restaurarProducto(string clave)
+        {
+            MySqlCommand cm = new MySqlCommand("UPDATE `grande`.`productos` SET `activo`= 'si' WHERE `clave`= @clave; ");
             cm.Parameters.AddWithValue("clave", clave);
             return con.executeNonQuery(cm);
         }

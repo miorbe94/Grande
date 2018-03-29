@@ -26,7 +26,7 @@ namespace Grande.Views
         public void cargarTabla(string texto)
         {
             DataTable dt;
-            if (checkFaltantes.Checked)
+            if (checkFaltantes.Checked == true)
             {
                 dt = DAOProductos.getAllNoDescriptionFaltantes(texto);
             }
@@ -73,23 +73,57 @@ namespace Grande.Views
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int index = dgProductos.CurrentRow.Index;
-            DialogResult dr = MessageBox.Show("¿Seguro deseas eliminar este producto?", "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dr == DialogResult.Yes)
+            if (dgProductos.Rows.Count < 1)
             {
-                bool a = DAOProductos.eliminarProducto(dgProductos[0, index].Value.ToString());
-                if (a)
-                    cargarTabla("");
+                MessageBox.Show("No hay elementos en la lista", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int index = dgProductos.CurrentRow.Index;
+                string mensaje = "";
+                if (checkEliminados.Checked)
+                {
+                    mensaje = "¿Deseas restaurar este producto al inventario?";
+                }
                 else
-                    MessageBox.Show("Error al borrar el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    mensaje = "¿Seguro deseas eliminar este producto?";
+                }
+                DialogResult dr = MessageBox.Show(mensaje, "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    bool a = false;
+                    if (checkEliminados.Checked)
+                    {
+                        a = DAOProductos.restaurarProducto(dgProductos[0, index].Value.ToString());
+                    }
+                    else
+                    {
+                        a = DAOProductos.eliminarProducto(dgProductos[0, index].Value.ToString());
+                    }
+
+                    if (a)
+                        cargarTabla("");
+                    else
+                        MessageBox.Show("Error al procesar petición", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                txtBuscador.Text = "";
+                cargarTabla("");
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int index = dgProductos.CurrentRow.Index;
-            new RegistroDatos(dgProductos[0, index].Value.ToString(), RegistroDatos.EDITAR).ShowDialog();
-            cargarTabla("");
+            if(dgProductos.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay elementos en la lista", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int index = dgProductos.CurrentRow.Index;
+                new RegistroDatos(dgProductos[0, index].Value.ToString(), RegistroDatos.EDITAR).ShowDialog();
+                cargarTabla("");
+            }
         }
 
         private void txtBuscador_TextChanged(object sender, EventArgs e)
@@ -109,9 +143,13 @@ namespace Grande.Views
 
         private void checkFaltantes_CheckedChanged(object sender, EventArgs e)
         {
-            checkEliminados.Checked = false;
+            if (checkFaltantes.Checked)
+            {
+                checkEliminados.Checked = false;
+            }            
             txtBuscador.Text = "";
             cargarTabla(txtBuscador.Text);
+            txtBuscador.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -138,14 +176,16 @@ namespace Grande.Views
             {
                 activos = false;
                 checkFaltantes.Checked = false;
+                btnEliminar.Text = "Restaurar";
             }
             else
             {
                 activos = true;
-                checkFaltantes.Enabled = true;
+                btnEliminar.Text = "Eliminar";
             }
             txtBuscador.Text = "";
             cargarTabla(txtBuscador.Text);
+            txtBuscador.Focus();
         }
     }
 }
