@@ -153,17 +153,7 @@ namespace Grande
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            if(dgCarrito.Rows.Count < 1)
-            {
-                MessageBox.Show("Debes agregar minimo un articulo al carrito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                new Cobro(dgCarrito).ShowDialog();
-                limpiado();
-            }
-            checarInventario();
-            txtCodigo.Focus();
+            cobrar();
         }
 
         private void dgCarrito_Paint(object sender, PaintEventArgs e)
@@ -184,11 +174,33 @@ namespace Grande
 
         }
 
+        public void cobrar()
+        {
+            if (dgCarrito.Rows.Count < 1)
+            {
+                MessageBox.Show("Debes agregar minimo un articulo al carrito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                new Cobro(dgCarrito).ShowDialog();
+                limpiado();
+            }
+            checarInventario();
+            txtCodigo.Focus();
+        }
+
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                agregar();
+                if (txtCodigo.Text == "")
+                {
+                    cobrar();
+                }
+                else
+                {
+                    agregar();
+                }
                 e.Handled = true;
             }
         }

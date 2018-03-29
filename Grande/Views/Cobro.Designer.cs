@@ -52,6 +52,7 @@
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(456, 38);
             this.txt.TabIndex = 1;
+            this.txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label2
             // 

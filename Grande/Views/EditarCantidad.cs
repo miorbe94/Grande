@@ -47,14 +47,20 @@ namespace Grande.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            cambiar();
+        }
+
+        public void cambiar()
+        {
             try
             {
                 int valor = int.Parse(textBox1.Text);
                 if (valor > 0)
                 {
-                    
+
                     int stock = p.Cantidad;
-                    if(stock >= valor)
+                    if (stock >= valor)
                     {
                         dg[2, row].Value = textBox1.Text;
                         this.Close();
@@ -63,7 +69,7 @@ namespace Grande.Views
                     {
                         MessageBox.Show("No productos suficientes en existencia", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    
+
                 }
                 else
                 {
@@ -74,7 +80,15 @@ namespace Grande.Views
             {
                 MessageBox.Show("El valor debe ser un número entero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                cambiar();
+                e.Handled = true;
+            }
         }
     }
 }

@@ -47,6 +47,11 @@ namespace Grande.Views
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            cobrar();
+        }
+
+        public void cobrar()
+        {
             bool exito = false;
 
             decimal cambio = 0;
@@ -93,6 +98,15 @@ namespace Grande.Views
                 {
                     MessageBox.Show("Valor no aceptado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                cobrar();
+                e.Handled = true;
             }
         }
     }
