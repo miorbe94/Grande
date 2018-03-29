@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Grande.POJOS;
+using System.Text.RegularExpressions;
 
 namespace Grande.Views
 {
@@ -110,14 +111,45 @@ namespace Grande.Views
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            if(accion == 1)            {
-                registrarNuevo();
-            }else if(accion == 2)
+            if (validaciones())
             {
-                editarRegistro();
+                if(accion == 1){
+                    registrarNuevo();
+                }else if(accion == 2)
+                {
+                    editarRegistro();
+                }
             }
             
             
+        }
+
+        public bool validaciones()
+        {
+            bool a = true;
+            string mensaje = "valores no apropiados para:\n";
+
+            Regex dec = new Regex(@"^[0-9]+([.][0-9]+)?$"); //decimal
+            Regex ent = new Regex(@"^[0-9]+$"); //entero
+
+            if (!ent.IsMatch(txtCantidad.Text)){
+                mensaje += "Cantidad\n";
+                a = false;
+            }
+            if (!ent.IsMatch(txtCantidadMinima.Text)){
+                mensaje += "Cantidad minima\n";
+                a = false;
+            }
+            if (!dec.IsMatch(txtPrecio.Text))
+            {
+                mensaje += "Precio\n";
+                a = false;
+            }
+            if (!a)
+            {
+                MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            return a;
         }
 
         private void RegistroDatos_Load(object sender, EventArgs e)
