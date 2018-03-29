@@ -144,19 +144,35 @@ namespace Grande
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int index = dgCarrito.CurrentRow.Index;
-            new EditarCantidad(dgCarrito, index).ShowDialog();
+            if(dgCarrito.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay elementos en el carrito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                int index = dgCarrito.CurrentRow.Index;
+                new EditarCantidad(dgCarrito, index).ShowDialog();
+
+            }
             txtCodigo.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("¿Seguro deseas quitar este elemento de la lista?", "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dr == DialogResult.Yes)
+            if (dgCarrito.Rows.Count < 1)
             {
-                int index = dgCarrito.CurrentRow.Index;
-                dgCarrito.Rows.RemoveAt(index);
-            }            
+                MessageBox.Show("No hay elementos en el carrito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("¿Seguro deseas quitar este elemento de la lista?", "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    int index = dgCarrito.CurrentRow.Index;
+                    dgCarrito.Rows.RemoveAt(index);
+                }
+            }
+                    
             txtCodigo.Focus();
         }
 
