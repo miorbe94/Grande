@@ -75,6 +75,8 @@ namespace Grande
             if (p == null)
             {
                 MessageBox.Show("Producto no registrado en la base de datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }else if(p.activo == "no"){
+                MessageBox.Show("Producto dado de baja en la base de datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

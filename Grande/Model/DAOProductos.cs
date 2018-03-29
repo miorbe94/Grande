@@ -114,6 +114,7 @@ namespace Grande.Model
                 p.Cantidad = int.Parse(dt.Rows[0][3].ToString());
                 p.CantidadMinima = int.Parse(dt.Rows[0][4].ToString());
                 p.Precio = decimal.Parse(dt.Rows[0][5].ToString());
+                p.activo = dt.Rows[0][6].ToString();
                 return p;
             }
             else
@@ -122,6 +123,7 @@ namespace Grande.Model
             }
             
         }
+
 
 
 

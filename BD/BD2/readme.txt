@@ -1,0 +1,1 @@
+Se agrego columna usada para determinar si un producto está activo o nog
