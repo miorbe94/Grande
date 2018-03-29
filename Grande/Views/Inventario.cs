@@ -158,7 +158,7 @@ namespace Grande.Views
 
             BarcodeLib.Barcode codigo = new BarcodeLib.Barcode();
             codigo.IncludeLabel = true;
-            Image img = (Image)codigo.Encode(BarcodeLib.TYPE.CODE128, clave, Color.Black, Color.White, 300, 100);
+            Image img = (Image)codigo.Encode(BarcodeLib.TYPE.CODE128B, clave, Color.Black, Color.White, 300, 100);
             SaveFileDialog dialogo = new SaveFileDialog();
             dialogo.AddExtension = true;
             dialogo.Filter = "Image PNG (*.png)|*.png";

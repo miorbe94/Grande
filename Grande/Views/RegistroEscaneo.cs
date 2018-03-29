@@ -44,15 +44,29 @@ namespace Grande.Views
 
         public void agregar()
         {
-            clave = DAOProductos.existeProducto(txtClave.Text) ? null : txtClave.Text;
-            if (clave != null)
-                this.Close();
-            else
+            try
             {
-                MessageBox.Show("Este código ya existe en la base de datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtClave.Text = "";
-                txtClave.Focus();
+                BarcodeLib.Barcode codigo = new BarcodeLib.Barcode();
+                codigo.IncludeLabel = true;
+                Image img = (Image)codigo.Encode(BarcodeLib.TYPE.CODE128B, clave, Color.Black, Color.White, 300, 100);
+
+                clave = DAOProductos.existeProducto(txtClave.Text) ? null : txtClave.Text;
+                if (clave != null)
+                    this.Close();
+                else
+                {
+                    MessageBox.Show("Este código ya existe en la base de datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtClave.Text = "";
+                    txtClave.Focus();
+                }
             }
+            catch
+            {
+                MessageBox.Show("Error al crear código de barras\nRevise que no haya usado caracteres especiales o la letra ñ", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            
         }
 
         private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
