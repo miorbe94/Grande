@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,67 +47,52 @@ namespace Grande.Views
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            bool flag = true; //se debe dar cambio
-            bool proceder = true; //se debe ejecutar la venta
-            bool errorCambio = false; 
+            bool exito = false;
 
             decimal cambio = 0;
-            if (textBox1.Text == "")
+            if (txt.Text == "")
             {
-                flag = false;
-            }else
-            {
-                try
+                exito = DAOVenta.venta(dg);
+                if (exito)
                 {
-                    decimal recibido = decimal.Parse(textBox1.Text);
-                    cambio = recibido - total;                    
-                    if (cambio < 0)
-                    {
-                        errorCambio = true;
-                        proceder = false;
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Error al calcular el cambio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    proceder = false;
-                    errorCambio = true;
-                }
-                
-            }
-            if (proceder)
-            {
-                bool a = DAOVenta.venta(dg);
-                if (a)
-                {
-                    if (!flag)
-                    {
-                        new Total().ShowDialog();
-                    }
-                    else
-                    {
-                        new Total(cambio).ShowDialog();                        
-                    }
+                    new Total().ShowDialog();
                 }
                 else
                 {
                     MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                this.Close();
             }
             else
             {
-                if (errorCambio)
+                Regex val = new Regex(@"^[0-9]+([.][0-9]+)?$");
+                if (val.IsMatch(txt.Text))
                 {
-                    MessageBox.Show("Debe pedir mas dinero", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    decimal recibido = decimal.Parse(txt.Text);
+                    cambio = recibido - total;
+                    if (cambio < 0)
+                    {
+                        MessageBox.Show("Debes pedir mas dinero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        //proceder al pago, mostrar cambio y cerrar
+                        exito = DAOVenta.venta(dg);
+                        if (exito)
+                        {
+                            new Total(cambio).ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al procesar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Valor no aceptado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            if (!errorCambio)
-            {
-                this.Close();
             }
         }
     }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cobro));
             this.lblTotal = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,13 +45,13 @@
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Total: $0.00";
             // 
-            // textBox1
+            // txt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(18, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(456, 38);
-            this.textBox1.TabIndex = 1;
+            this.txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt.Location = new System.Drawing.Point(18, 69);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(456, 38);
+            this.txt.TabIndex = 1;
             // 
             // label2
             // 
@@ -85,7 +85,7 @@
             this.ClientSize = new System.Drawing.Size(488, 185);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt);
             this.Controls.Add(this.lblTotal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -105,7 +105,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAceptar;
     }
