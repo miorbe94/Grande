@@ -23,6 +23,7 @@ namespace Grande
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Inventario().ShowDialog();
+            checarInventario();
         }
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,9 +31,19 @@ namespace Grande
             new Ventas().ShowDialog();
         }
 
+        public void checarInventario()
+        {
+            int cantidad = DAOProductos.cantidadProductosBajos();
+            if (cantidad > 0)
+                btnInventario.Text = "Inventario ( " + cantidad + " )";
+            else
+                btnInventario.Text = "Inventario";
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            checarInventario();
         }
 
         public bool existeEnCarrito(Producto p)
@@ -149,6 +160,7 @@ namespace Grande
                 new Cobro(dgCarrito).ShowDialog();
                 limpiado();
             }
+            checarInventario();
             txtCodigo.Focus();
         }
 

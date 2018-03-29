@@ -13,7 +13,11 @@ namespace Grande.Model
     {
         private static Conexion con = Conexion.getInstance();
 
-        
+        public static int cantidadProductosBajos()
+        {
+            MySqlCommand cm = new MySqlCommand("select count(*) from productos where cantidad <= cantidadminima;");
+            return int.Parse(con.Scalar(cm));
+        }
 
         public static DataTable getAll()
         {
