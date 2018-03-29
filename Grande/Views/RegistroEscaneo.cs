@@ -48,8 +48,8 @@ namespace Grande.Views
             {
                 BarcodeLib.Barcode codigo = new BarcodeLib.Barcode();
                 codigo.IncludeLabel = true;
-                Image img = (Image)codigo.Encode(BarcodeLib.TYPE.CODE128B, clave, Color.Black, Color.White, 300, 100);
-
+                Image img = (Image)codigo.Encode(BarcodeLib.TYPE.CODE128B, txtClave.Text, Color.Black, Color.White, 300, 100);
+                img.Dispose();
                 clave = DAOProductos.existeProducto(txtClave.Text) ? null : txtClave.Text;
                 if (clave != null)
                     this.Close();

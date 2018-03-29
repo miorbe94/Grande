@@ -169,6 +169,14 @@ namespace Grande
         private void dgCarrito_Paint(object sender, PaintEventArgs e)
         {
             total();
+            if(dgCarrito.Rows.Count > 0)
+            {
+                menu.Enabled = false;
+            }
+            else
+            {
+                menu.Enabled = true;
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

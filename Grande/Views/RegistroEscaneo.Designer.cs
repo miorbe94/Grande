@@ -55,6 +55,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.Location = new System.Drawing.Point(12, 37);
+            this.txtClave.MaxLength = 13;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(371, 30);
             this.txtClave.TabIndex = 4;
