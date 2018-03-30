@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -52,36 +53,46 @@ namespace Grande.Views
 
         public void cambiar()
         {
-            try
+            Regex reg = new Regex("^[0-9]+$");
+            if (reg.IsMatch(textBox1.Text))
             {
-                int valor = int.Parse(textBox1.Text);
-                if (valor > 0)
+                try
                 {
-
-                    int stock = p.Cantidad;
-                    if (stock >= valor)
+                    int valor = int.Parse(textBox1.Text);
+                    if (valor > 0)
                     {
-                        dg[2, row].Value = textBox1.Text;
-                        this.Close();
+
+                        int stock = p.Cantidad;
+                        if (stock >= valor)
+                        {
+                            dg[2, row].Value = int.Parse(textBox1.Text);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No productos suficientes en existencia", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            textBox1.Focus();
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("No productos suficientes en existencia", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Debes agregar un número mayor a 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         textBox1.Focus();
                     }
-
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Debes agregar un número mayor a 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El valor debe ser un número entero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     textBox1.Focus();
                 }
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("El valor debe ser un número entero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 textBox1.Focus();
             }
+            
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

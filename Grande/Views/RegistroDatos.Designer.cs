@@ -213,7 +213,7 @@
             this.MinimumSize = new System.Drawing.Size(799, 467);
             this.Name = "RegistroDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "RegistroDatos";
+            this.Text = "Datos";
             this.Load += new System.EventHandler(this.RegistroDatos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

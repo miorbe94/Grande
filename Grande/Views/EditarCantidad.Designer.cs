@@ -97,7 +97,7 @@
             this.Name = "EditarCantidad";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EditarCantidad";
+            this.Text = "Editar cantidad";
             this.Load += new System.EventHandler(this.EditarCantidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

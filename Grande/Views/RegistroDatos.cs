@@ -62,7 +62,7 @@ namespace Grande.Views
                 Producto p = new Producto();
                 p.Clave = txtCodigo.Text;
                 p.Descripcion = txtDescripción.Text;
-                p.Nombre = txtNombre.Text;
+                p.Nombre = txtNombre.Text.Trim();
                 p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
                 p.CantidadMinima = int.Parse(txtCantidadMinima.Text);
@@ -89,7 +89,7 @@ namespace Grande.Views
                 Producto p = new Producto();
                 p.Clave = txtCodigo.Text;
                 p.Descripcion = txtDescripción.Text;
-                p.Nombre = txtNombre.Text;
+                p.Nombre = txtNombre.Text.Trim();
                 p.Precio = decimal.Parse(txtPrecio.Text);
                 p.Cantidad = int.Parse(txtCantidad.Text);
                 p.CantidadMinima = int.Parse(txtCantidadMinima.Text);

@@ -89,7 +89,7 @@
             this.Name = "RegistroEscaneo";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "RegistroEscaneo";
+            this.Text = "Registro";
             this.Load += new System.EventHandler(this.RegistroEscaneo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
