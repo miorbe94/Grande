@@ -73,9 +73,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(332, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 25);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Cantidad";
+            this.label2.Text = "*Cantidad";
             // 
             // txtCantidad
             // 
@@ -93,9 +93,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 25);
+            this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "*Nombre";
             // 
             // txtNombre
             // 
@@ -156,6 +156,7 @@
             this.txtCantidadMinima.Name = "txtCantidadMinima";
             this.txtCantidadMinima.Size = new System.Drawing.Size(204, 30);
             this.txtCantidadMinima.TabIndex = 3;
+            this.txtCantidadMinima.Text = "0";
             // 
             // label5
             // 
@@ -164,9 +165,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(560, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 25);
+            this.label5.Size = new System.Drawing.Size(166, 25);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Cantidad minima";
+            this.label5.Text = "*Cantidad minima";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtPrecio
@@ -186,9 +187,9 @@
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(332, 70);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(67, 25);
+            this.lbl.Size = new System.Drawing.Size(75, 25);
             this.lbl.TabIndex = 11;
-            this.lbl.Text = "Precio";
+            this.lbl.Text = "*Precio";
             // 
             // RegistroDatos
             // 
