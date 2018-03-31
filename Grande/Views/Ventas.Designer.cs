@@ -79,7 +79,7 @@
             this.dgVentas.RowHeadersVisible = false;
             this.dgVentas.RowTemplate.Height = 24;
             this.dgVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVentas.Size = new System.Drawing.Size(546, 489);
+            this.dgVentas.Size = new System.Drawing.Size(661, 489);
             this.dgVentas.TabIndex = 0;
             this.dgVentas.SelectionChanged += new System.EventHandler(this.dgVentas_SelectionChanged);
             // 
@@ -115,14 +115,14 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgProductos.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgProductos.Location = new System.Drawing.Point(564, 12);
+            this.dgProductos.Location = new System.Drawing.Point(679, 12);
             this.dgProductos.MultiSelect = false;
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.ReadOnly = true;
             this.dgProductos.RowHeadersVisible = false;
             this.dgProductos.RowTemplate.Height = 24;
             this.dgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProductos.Size = new System.Drawing.Size(797, 489);
+            this.dgProductos.Size = new System.Drawing.Size(682, 489);
             this.dgProductos.TabIndex = 1;
             this.dgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dgProductos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgProductos_MouseClick);

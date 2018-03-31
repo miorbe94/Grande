@@ -16,13 +16,13 @@
         "Entry"
         {
         "MsmKey" = "8:_2C4F6CBE646558283536D15D1127C939"
-        "OwnerKey" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
+        "OwnerKey" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_4DCC291AB8FF1DB3BEA6DD69D1280154"
-        "OwnerKey" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
+        "OwnerKey" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -34,12 +34,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A2CD970E387F510A0233780751DA0E62"
-        "OwnerKey" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
+        "OwnerKey" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
+        "MsmKey" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -52,7 +52,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
+        "OwnerKey" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -85,6 +85,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -101,6 +109,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -300,24 +324,24 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GrandeSetup"
         "ProductCode" = "8:{7D577660-0F77-468E-A1EA-51D819DE478B}"
-        "PackageCode" = "8:{57B522E9-31CA-42E8-88C6-6361F042B861}"
+        "PackageCode" = "8:{8033FB2E-A328-4DDC-A1D1-50E5B986C4CA}"
         "UpgradeCode" = "8:{61780204-4733-4422-9D9E-522E8B470FAB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:GrandeSetup"
+        "Title" = "8:Barberia"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Mike"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_966E8360BABE4ABE8257CB8F42D2F908"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -420,7 +444,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0079072C497C42FCA61D7A50C9537BE6"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E576D9FC376741EEB85811D06F697ACA"
             {
             "Name" = "8:Barberia"
             "Arguments" = "8:"
@@ -428,13 +452,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
-            "Folder" = "8:_07D30F9FAB1E433B80A4EDC0B1906FDC"
+            "Target" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
+            "Folder" = "8:_055A2D10E1694BC08A8C8EF8F467D179"
             "WorkingFolder" = "8:_1F970B196F9349E2A19FCA443FFEB2B4"
             "Icon" = "8:_966E8360BABE4ABE8257CB8F42D2F908"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D2603548CF9C4E8DAA6E363712D3D666"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F8C3010A47B94D00BA8E72C5B5BEB228"
             {
             "Name" = "8:Barberia"
             "Arguments" = "8:"
@@ -442,8 +466,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_FBCC6CF852D24FE0AA75600B571BEDE9"
-            "Folder" = "8:_055A2D10E1694BC08A8C8EF8F467D179"
+            "Target" = "8:_EA59F870D42E44D6845DD1AA0D35BFC4"
+            "Folder" = "8:_07D30F9FAB1E433B80A4EDC0B1906FDC"
             "WorkingFolder" = "8:_1F970B196F9349E2A19FCA443FFEB2B4"
             "Icon" = "8:_966E8360BABE4ABE8257CB8F42D2F908"
             "Feature" = "8:"
@@ -847,7 +871,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FBCC6CF852D24FE0AA75600B571BEDE9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EA59F870D42E44D6845DD1AA0D35BFC4"
             {
             "SourcePath" = "8:..\\Grande\\obj\\Release\\Grande.exe"
             "TargetName" = "8:"
