@@ -26,8 +26,8 @@ DROP TABLE IF EXISTS `productos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productos` (
   `clave` varchar(13) NOT NULL,
-  `nombre` varchar(15) NOT NULL,
-  `descripcion` varchar(50) DEFAULT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
   `cantidad` int(11) unsigned NOT NULL,
   `cantidadminima` int(11) unsigned NOT NULL,
   `precio` decimal(11,2) unsigned NOT NULL,
@@ -78,4 +78,4 @@ CREATE TABLE `ventas` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-30 18:31:27
+-- Dump completed on 2018-04-04 10:20:23
