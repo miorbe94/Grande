@@ -103,7 +103,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(17, 98);
-            this.txtNombre.MaxLength = 15;
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(314, 30);
             this.txtNombre.TabIndex = 4;
@@ -125,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripción.Location = new System.Drawing.Point(17, 159);
-            this.txtDescripción.MaxLength = 50;
+            this.txtDescripción.MaxLength = 200;
             this.txtDescripción.Multiline = true;
             this.txtDescripción.Name = "txtDescripción";
             this.txtDescripción.Size = new System.Drawing.Size(752, 201);

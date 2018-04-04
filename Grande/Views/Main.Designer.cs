@@ -278,6 +278,7 @@
             this.registroToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
+            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menu.Size = new System.Drawing.Size(1283, 36);
             this.menu.TabIndex = 2;
             this.menu.Text = "menuStrip1";
